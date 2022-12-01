@@ -1,35 +1,35 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .main-header {
-    height: 60px;
-    padding: 20px;
-    background-color: yellow;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  height: 60px;
+  padding: 20px;
+  background-color: yellow;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
+/* "vad gör .header-content"? händer inget när jag kommenterar ut den? */
 .header-content {
-    background: rgb(248, 129, 129);
-    height: 60px;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-
+  background: rgb(248, 129, 129);
+  height: 60px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
 }
 
 button {
-    margin: 20px;
-    padding: 10px;
-    width: 100px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 20px;
-    font-weight: bold;
-    color: whitesmoke;
-    background: linear-gradient(90deg, royalblue, lightgreen);
+  margin: 20px;
+  padding: 10px;
+  width: 100px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  color: whitesmoke;
+  background: linear-gradient(90deg, royalblue, lightgreen);
 }
