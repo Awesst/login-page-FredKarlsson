@@ -1,5 +1,5 @@
 const mainHeader = document.getElementById("mainHeader");
-const headerContent = document.getElementById("headerContent"); // vad används "headerContent" variablen till?
+const headerContent = document.getElementById("headerContent"); //JAKOB: vad används "headerContent" variablen till?
 const mainContent = document.getElementById("mainContent");
 const mainFooter = document.getElementById("mainFooter");
 
@@ -25,10 +25,10 @@ if (localStorage.getItem("username")) {
   loginFormCreate();
 }
 
-// skulle rekommendera att använda mycket av "metoderna" i html istället för i Javascript för det kan bli lite svårt att hänga med
-// med tanke på att det blir mycket att följa.
+//JAKOB: skulle rekommendera att använda mycket av "metoderna" i html istället för i Javascript för det kan bli lite svårt att hänga med
+//JAKOB: med tanke på att det blir mycket att följa.
 
-// däremot snyggt jobbat med methods!
+//JAKOB: däremot snyggt jobbat med methods!
 function loginFormCreate() {
   const loginForm = document.createElement("div");
   loginForm.setAttribute("id", "loginForm");
@@ -48,7 +48,7 @@ function loginFormCreate() {
 
   const passwordInput = document.createElement("input");
   passwordInput.setAttribute("id", "passwordInput");
-  passwordInput.setAttribute("type", "text"); // should be type password
+  passwordInput.setAttribute("type", "text"); //JAKOB: should be type password
 
   loginForm.appendChild(userNameLabel); //
   userNameLabel.appendChild(userNameInput);
@@ -58,14 +58,14 @@ function loginFormCreate() {
   let loginBtn = document.createElement("button");
   loginBtn.innerText = "Log in";
   loginBtn.addEventListener("click", () => {
-    console.log("click"); //ta bort console.log()
+    console.log("click"); //JAKOB: ta bort console.log()
     logIn();
   });
   loginForm.appendChild(loginBtn);
   mainContentLoggedOut();
 }
 
-// skulle rekommendera att växla med namnen, mycket som heter "loginform" eller "form" överlag som kan göra att det blir svårt att följa koden.
+//JAKOB: skulle rekommendera att växla med namnen, mycket som heter "loginform" eller "form" överlag som kan göra att det blir svårt att följa koden.
 function loginFormDelete() {
   const loginForm = document.getElementById("loginForm");
   mainHeader.removeChild(loginForm);
@@ -79,7 +79,7 @@ function logoutFormCreate() {
   let logoutBtn = document.createElement("button");
   logoutBtn.innerText = "Log out";
   logoutBtn.addEventListener("click", () => {
-    console.log("click"); // ta bort console.log()
+    console.log("click"); //JAKOB: ta bort console.log()
     logout();
   });
   logoutForm.appendChild(logoutBtn);
@@ -98,18 +98,18 @@ function logout() {
 }
 
 function logIn() {
-  let username = document.getElementById("userNameInput").value; //snyggt att lägga variablen inne i functionen eftersom den bara används 1 gång
-  let password = document.getElementById("passwordInput").value; //snyggt att lägga variablen inne i functionen eftersom den bara används 1 gång
+  let username = document.getElementById("userNameInput").value; //JAKOB: snyggt att lägga variablen inne i functionen eftersom den bara används 1 gång
+  let password = document.getElementById("passwordInput").value; //JAKOB: snyggt att lägga variablen inne i functionen eftersom den bara används 1 gång
 
   let userDatabase = readDatabase();
-  // snyggt jobbat med loopen,
+  //JAKOB: snyggt jobbat med loopen,
   for (i = 0; i < userDatabase.length; i++) {
     if (
       username === userDatabase[i].userName &&
       password === userDatabase[i].password
     ) {
       localStorage.setItem("username", username);
-      console.log(username + " logged in!"); //ta bort console.log()
+      console.log(username + " logged in!"); //JAKOB: ta bort console.log()
       loginFormDelete();
       logoutFormCreate();
       return;
@@ -133,8 +133,8 @@ function mainContentWrongUserData() {
   createNewUserForm();
 }
 
-// samma här skulle rekommendera att växla med namnen, mycket som heter "loginform" eller "form" överlag
-// som kan göra att det blir svårt att följa koden.
+//JAKOB: samma här skulle rekommendera att växla med namnen, mycket som heter "loginform" eller "form" överlag
+//JAKOB: som kan göra att det blir svårt att följa koden.
 function createNewUserForm() {
   const createNewUserForm = document.createElement("div");
   createNewUserForm.setAttribute("id", "createNewUserForm");
@@ -165,8 +165,8 @@ function createNewUserForm() {
   createNewUserBtn.innerText = "Create new user";
   createNewUserBtn.addEventListener("click", () => {
     console.log("click"); // ta bort console.log()
-    // snyggt jobbat med pushfunktionen
-    // skulle vara bra om man fick någon slags av notation att man registerat sig!
+    //JAKOB: snyggt jobbat med pushfunktionen
+    //JAKOB: skulle vara bra om man fick någon slags av notation att man registerat sig!
     let userDatabase = readDatabase();
     userDatabase.push({
       userName: userNameInput.value,
@@ -184,7 +184,7 @@ function deleteNewUserForm() {
   }
 }
 
-// snyggt jobbat med json.parse att regga din array till localstorage.
+//JAKOB: snyggt jobbat med json.parse att regga din array till localstorage.
 function readDatabase() {
   let userDatabase = JSON.parse(localStorage.getItem("userDatabase"));
   return userDatabase;

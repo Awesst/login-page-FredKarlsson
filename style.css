@@ -11,7 +11,7 @@
   align-items: center;
 }
 
-/* "vad gör .header-content"? händer inget när jag kommenterar ut den? */
+/*JAKOB: "vad gör .header-content"? händer inget när jag kommenterar ut den? */
 .header-content {
   background: rgb(248, 129, 129);
   height: 60px;
